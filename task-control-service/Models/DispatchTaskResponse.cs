@@ -4,6 +4,8 @@
     {
         public bool Success { get; set; }
 
-        public String Message { get; set; }
+        public string Message { get; set; }
+
+        public TaskDetailsMessage TaskDetails { get; set; }
     }
 }

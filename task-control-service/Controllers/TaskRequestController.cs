@@ -18,9 +18,9 @@ namespace task_control_service.Controllers
         }
 
         [HttpGet("dispatch-task", Name = "Dispatch Task")]
-        public ActionResult<DispatchTaskResponse> DispatchTask([FromQuery] DispatchTaskRequest dispatchRequest)
+        public async Task<ActionResult<DispatchTaskResponse>> DispatchTask([FromQuery] DispatchTaskRequest dispatchRequest)
         {
-            var response = _taskDispatcherService.DispatchTask(dispatchRequest);
+            var response = await _taskDispatcherService.DispatchTask(dispatchRequest);
             if (response.Success)
             {
                 return Ok(response);

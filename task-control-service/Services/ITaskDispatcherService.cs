@@ -4,6 +4,6 @@ namespace task_control_service.Services
 {
     public interface ITaskDispatcherService
     {
-        public DispatchTaskResponse DispatchTask(DispatchTaskRequest request);
+        public Task<DispatchTaskResponse> DispatchTask(DispatchTaskRequest request);
     }
 }

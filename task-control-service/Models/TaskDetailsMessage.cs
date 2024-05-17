@@ -2,15 +2,14 @@
 
 namespace task_control_service.Models
 {
-    public class DispatchTaskRequest
+    public class TaskDetailsMessage
     {
-        [Required]
+        public Guid TaskId { get; set; }
+
         public string RequesterUserId { get; set; }
 
-        [Required]
         public string Message { get; set; }
 
-        [Required]
         public int Duration { get; set; }
     }
 }

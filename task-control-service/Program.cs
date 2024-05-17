@@ -1,6 +1,10 @@
+using task_control_service.Models;
 using task_control_service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<KafkaConfiguration>(
+    builder.Configuration.GetSection("Kafka"));
 
 // Add services to the container.
 builder.Services.AddScoped<ITaskDispatcherService, TaskDispatcherService>();
